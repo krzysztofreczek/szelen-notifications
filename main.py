@@ -1,24 +1,14 @@
-import os
+import data
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-def add_two_numbers(n1, n2):
-    return n1 + n2
-
-
-def notify(title, text):
-    os.system("""
-              osascript -e 'display notification "{}" with title "{}"'
-              """.format(text, title))
-
-
-# Press the green button in the gutter to run the script.
+# Miro: https://miro.com/app/board/o9J_lhf0WP8=/
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print("Hello World!")
 
-    v = add_two_numbers(1, 20)
-    notify('Szelen update:', 'result is:' + str(v))
+    training1 = data.TrainingData('Ania', '2021-11-21')
+    training2 = data.TrainingData('Ania', '2021-11-22')
+    training3 = data.TrainingData('Krzysio', '2021-11-20')
+    training4 = data.TrainingData('Krzysio', '2021-11-21')
+
+    trainings = data.Trainings([training1, training2, training3, training4])
+
+    print(trainings)
