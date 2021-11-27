@@ -1,10 +1,3 @@
-class Trainings:
-    data = []
-
-    def __init__(self, trainings):
-        Trainings.data = trainings
-
-
 class TrainingData:
     user = ""
     timestamp = ""
