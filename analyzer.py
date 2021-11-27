@@ -1,7 +1,11 @@
 import data
-import data
 
 
 def analyze_trainings(trainings: [data.TrainingData], user: str) -> str:
-    # here I will write my code
-    return "4"
+    count = 0
+    for training in trainings:
+        if user == training.user:
+            count = count + 1
+
+    return "You have " + str(count) + " training(s)"
+

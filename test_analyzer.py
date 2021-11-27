@@ -8,7 +8,7 @@ class Test(TestCase):
         user = "Ania"
         trainings = []
         message = analyzer.analyze_trainings(trainings, user)
-        self.assertEqual("You have 0 trainings", message)
+        self.assertEqual("You have 0 training(s)", message)
 
     def test_few_trainings_provided_for_the_user(self):
         user = "Ania"
@@ -17,7 +17,7 @@ class Test(TestCase):
             data.TrainingData("Ania", "2021-11-22"),
         ]
         message = analyzer.analyze_trainings(trainings, user)
-        self.assertEqual("You have 2 trainings", message)
+        self.assertEqual("You have 2 training(s)", message)
 
     def test_few_trainings_provided_for_another_user(self):
         user = "Ania"
@@ -27,4 +27,4 @@ class Test(TestCase):
             data.TrainingData("Ania", "2021-11-22"),
         ]
         message = analyzer.analyze_trainings(trainings, user)
-        self.assertEqual("You have 1 trainings", message)
+        self.assertEqual("You have 1 training(s)", message)

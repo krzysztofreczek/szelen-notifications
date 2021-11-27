@@ -3,5 +3,5 @@ class TrainingData:
     timestamp = ""
 
     def __init__(self, user, timestamp):
-        TrainingData.user = user
-        TrainingData.timestamp = timestamp
+        self.user = user
+        self.timestamp = timestamp
