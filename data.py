@@ -1,7 +1,7 @@
 class TrainingData:
     user: str
-    timestamp: str
+    date: str
 
-    def __init__(self, user: str, timestamp: str):
+    def __init__(self, user: str, date: str):
         self.user = user
-        self.timestamp = timestamp
+        self.date = date
