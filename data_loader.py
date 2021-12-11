@@ -13,5 +13,13 @@ def load_data() -> [data.TrainingData]:
     data_string = data_string.replace('user', '"user"')
 
     data_json = json.loads(data_string)
-    print(data_json)
-    return []
+    trainings = []
+
+    for d in data_json:
+        if 'user' in d:
+            user = d['user']
+            date = d['date']
+            training = data.TrainingData(user, date)
+            trainings.append(training)
+
+    return trainings
