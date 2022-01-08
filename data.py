@@ -1,7 +1,10 @@
-class TrainingData:
-    user: str
-    date: str
+from datetime import date
 
-    def __init__(self, user: str, date: str):
-        self.user = user
-        self.date = date
+
+class Training:
+    user: str
+    date: date
+
+    def __init__(self, u: str, d: date):
+        self.user = u
+        self.date = d

@@ -1,9 +1,10 @@
 import data
 import http.client
 import json
+from datetime import datetime
 
 
-def load_data() -> [data.TrainingData]:
+def load_trainings() -> [data.Training]:
     conn = http.client.HTTPSConnection("raw.githubusercontent.com")
     conn.request("GET", "/krzysztofreczek/szelen/master/db/events.0.js", '', {})
     res = conn.getresponse()
@@ -18,8 +19,11 @@ def load_data() -> [data.TrainingData]:
     for d in data_json:
         if 'user' in d:
             user = d['user']
-            date = d['date']
-            training = data.TrainingData(user, date)
+
+            date_str = d['date']
+            date = datetime.strptime(date_str, '%Y/%m/%d')
+
+            training = data.Training(user, date)
             trainings.append(training)
 
     return trainings
